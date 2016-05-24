@@ -1,31 +1,41 @@
-USE_CAMERA_STUB := true
+# Copyright (C) 2015 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-# inherit from the proprietary version
+#
+# This file sets variables that control the way modules are built
+# thorughout the system. It should not be used to conditionally
+# disable makefiles (the proper mechanism to control what gets
+# included in a build is to use PRODUCT_PACKAGES in a product
+# definition file).
+#
+
+# Inherit from common a5
+-include device/samsung/a5-common/BoardConfigCommon.mk
+
+# Inherit from the proprietary version
 -include vendor/samsung/a53g/BoardConfigVendor.mk
 
-TARGET_ARCH := arm
-TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := unknown
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := cortex-a7
-TARGET_CPU_SMP := true
-ARCH_ARM_HAVE_TLS_REGISTER := true
+# Assert
+TARGET_OTA_ASSERT_DEVICE := a5,a53g,a53gxx
 
-TARGET_BOOTLOADER_BOARD_NAME := a53g
+# Kernel
+TARGET_KERNEL_CONFIG := cyanogen_a53g_defconfig
 
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
-BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_PAGESIZE := 2048
+# TWRP
+TW_THEME := portrait_hdpi
 
-# fix this up by examining /proc/mtd on a running device
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00380000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00480000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x08c60000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_FLASH_BLOCK_SIZE := 131072
-
-TARGET_PREBUILT_KERNEL := device/samsung/a53g/kernel
-
-BOARD_HAS_NO_SELECT_BUTTON := true
+# Vendor Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/a53g/init/init_a53g.cpp

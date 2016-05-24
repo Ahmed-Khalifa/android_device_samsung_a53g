@@ -1,15 +1,11 @@
-# Release name
-PRODUCT_RELEASE_NAME := a53g
-
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/a53g/device_a53g.mk)
+# Enhanced NFC
+#$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := a53g
-PRODUCT_NAME := cm_a53g
-PRODUCT_BRAND := samsung
-PRODUCT_MODEL := a53g
-PRODUCT_MANUFACTURER := samsung
+$(call inherit-product, device/samsung/a53g/full_a53g.mk)
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=a53gxx TARGET_DEVICE=a53g
+
+PRODUCT_NAME := cm_a53gxx
