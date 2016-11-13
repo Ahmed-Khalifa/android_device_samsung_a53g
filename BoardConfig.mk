@@ -24,18 +24,12 @@
 -include device/samsung/a5-common/BoardConfigCommon.mk
 
 # Inherit from the proprietary version
--include vendor/samsung/a53g/BoardConfigVendor.mk
+-include vendor/samsung/a53gxx/BoardConfigVendor.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := a5,a53g,a53gxx
-
-# Kernel
-TARGET_KERNEL_CONFIG := cyanogen_a53g_defconfig
-
-# TWRP
-TW_THEME := portrait_hdpi
-
+#TARGET_OTA_ASSERT_DEVICE := a5ulte,a5ultexx,a5lte,a53g,a53gxx
+TARGET_OTA_ASSERT_DEVICE := a53g,a53gxx
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/a53g/init/init_a53g.cpp
+TARGET_INIT_VENDOR_LIB := libinit_a53g
+TARGET_RECOVERY_DEVICE_MODULES := libinit_a53g

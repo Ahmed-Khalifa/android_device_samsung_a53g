@@ -1,1 +1,1 @@
-add_lunch_combo cm_a53g-userdebug
+add_lunch_combo cm_a53gxx-userdebug

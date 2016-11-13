@@ -34,7 +34,7 @@
 #include "log.h"
 #include "util.h"
 
-#include "init_msm.h"
+#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
 
 void init_dsds() {
     property_set("ro.multisim.set_audio_params", "true");
@@ -42,7 +42,7 @@ void init_dsds() {
     property_set("persist.radio.multisim.config", "dsds");
 }
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+void vendor_load_properties()
 {
     char platform[PROP_VALUE_MAX];
     char bootloader[PROP_VALUE_MAX];
@@ -50,15 +50,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     char devicename[PROP_VALUE_MAX];
     int rc;
 
-    UNUSED(msm_id);
-    UNUSED(msm_ver);
-    UNUSED(board_type);
-
-    rc = property_get("ro.board.platform", platform);
     if (!rc || !ISMATCH(platform, ANDROID_TARGET))
         return;
-
-    property_get("ro.bootloader", bootloader);
 
     if (strstr(bootloader, "A500FU")) {
         /* SM-A500FU */
@@ -82,17 +75,24 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "a5lte");
 
         init_dsds();
+    } else if (strstr(bootloader, "A500M")) {
+        /* SM-A500M */
+        property_set("ro.build.fingerprint", "samsung/a5lteub/a5lte:5.0.2/LRX22G/A500MUBU1BPB2:user/release-keys");
+        property_set("ro.build.description", "a5lteub-user 5.0.2 LRX22G A500MUBU1BPB2 release-keys");
+        property_set("ro.product.model", "SM-A500M");
+        property_set("ro.product.device", "a5lte");
+
+        init_dsds();
     }else if (strstr(bootloader, "A500H")) {
         /* SM-A500H */
-        property_set("ro.build.fingerprint", "samsung/a53gxx/a53g:5.0.2/LRX22G/A500HXXU1BPB8:user/release-keys");
-        property_set("ro.build.description", "a53gxx-user 5.0.2 LRX22G A500HXXU1BPB8 release-keys");
+        property_set("ro.build.fingerprint", "samsung/a53gxx/a53g:6.0.1/MMB29M/A500HXXU1CPH8:user/release-keys");
+        property_set("ro.build.description", "a53gxx-user 6.0.1 MMB29M A500HXXU1CPH8 release-keys");
         property_set("ro.product.model", "SM-A500H");
         property_set("ro.product.device", "a53g");
 
         init_dsds();
     }
 
-    property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
     INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
 }
