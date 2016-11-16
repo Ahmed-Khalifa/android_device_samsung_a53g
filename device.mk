@@ -21,8 +21,7 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
 # Device overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/a53g/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/a5-common/overlay
 
 # Inherit from a5-common
 $(call inherit-product, device/samsung/a5-common/common.mk)
-

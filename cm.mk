@@ -1,10 +1,11 @@
-# Inherit some common CM stuff.
+# include PAC common configuration
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
+include vendor/cm/config/common.mk
 
 # Enhanced NFC
-#$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-$(call inherit-product, device/samsung/a53g/full_a53g.mk)
+$(call inherit-product, device/samsung/a53g/cm_a53g.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=a53gxx TARGET_DEVICE=a53g
 
