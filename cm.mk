@@ -5,8 +5,8 @@ include vendor/cm/config/common.mk
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-$(call inherit-product, device/samsung/a53gxx/cm_a53gxx.mk)
+$(call inherit-product, device/samsung/a53g/cm_a53g.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=a53gxx TARGET_DEVICE=a53g
 
-PRODUCT_NAME := cm_a53gxx
+PRODUCT_NAME := cm_a53g

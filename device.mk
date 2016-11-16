@@ -14,7 +14,7 @@
 #
 
 # Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/a53gxx/a53gxx-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/a53g/a53g-vendor.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
