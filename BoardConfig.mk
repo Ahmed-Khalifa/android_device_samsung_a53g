@@ -11,7 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 #
 # This file sets variables that control the way modules are built
 # thorughout the system. It should not be used to conditionally
@@ -20,12 +19,6 @@
 # definition file).
 #
 
-# Inherit from common a5
--include device/samsung/a5-common/BoardConfigCommon.mk
-
-# Inherit from the proprietary version
--include vendor/samsung/a53g/BoardConfigVendor.mk
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a5ulte,a5ultexx,a5lte,a53g,a53gxx
 # Vendor Init
@@ -33,3 +26,11 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_a53g
 TARGET_RECOVERY_DEVICE_MODULES := libinit_a53g
 
+#TWRP
+RECOVERY_VARIANT := twrp
+
+# Inherit from common a5
+-include device/samsung/a5-common/BoardConfigCommon.mk
+
+# Inherit from the proprietary version
+-include vendor/samsung/a53g/BoardConfigVendor.mk
