@@ -31,4 +31,4 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_a53g
 -include device/samsung/a5-common/BoardConfigCommon.mk
 
 # Inherit from the proprietary version
-#-include vendor/samsung/a53g/BoardConfigVendor.mk
+-include vendor/samsung/a53g/BoardConfigVendor.mk
