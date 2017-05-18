@@ -19,16 +19,15 @@
 # included in a build is to use PRODUCT_PACKAGES in a product
 # definition file).
 #
-# Inherit from common a5
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a5ulte,a5ultexx,a5lte,a53g,a53gxx
+
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_a53g
 TARGET_RECOVERY_DEVICE_MODULES := libinit_a53g
 
--include device/samsung/a5-common/BoardConfigCommon.mk
-
 # Inherit from the proprietary version
 -include vendor/samsung/a53g/BoardConfigVendor.mk
+-include device/samsung/a5-common/BoardConfigCommon.mk
