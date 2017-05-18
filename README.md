@@ -1,2 +1,1 @@
-# android_device_samsung_a53g
-Device tree for Samsung Galaxy A5 (SM-A500H)
+Resurrection Remix OS device_tree for a53g AKA Samsung Galaxy A5 Duos(SM-A500H)
