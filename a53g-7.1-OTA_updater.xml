@@ -2,19 +2,29 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
         <Beta>
         <a53g>
-            <Filename>RR-N-v5.8.3-20170430-a53g-Unofficial.zip</Filename>
+            <Filename>RR-N-v5.8.3-20170520-a53g-Unofficial.zip</Filename>
             <RomUrl
                 id="rom"
                 title="Rom"
-                description="Download Latest Version">https://www.androidfilehost.com/?fid=817550096634766345</RomUrl>
+                description="Download Latest RR Build">https://www.androidfilehost.com/?fid=817550096634771086</RomUrl>
             <ChangelogUrl
                 id="changelog"
                 title="Changelog"
                 description="View Changelog">https://github.com/ResurrectionRemix/android_vendor_resurrection/blob/nougat/CHANGELOG.mkdn</ChangelogUrl>
             <OpenGappsUrl
             	id="open_gapps"
-            	title="Open"
-            	description="Download Open latest GApps">http://opengapps.org</OpenGappsUrl>
+            	title="OpenGapps"
+            	description="Download latest OpenGApps">http://opengapps.org</OpenGappsUrl>
+	    <LteFix
+		id="lte_fix"
+            	title="4G/LTE Fix"
+            	description="For adding LTE support on Resurrection Remix">https://www.androidfilehost.com/?fid=889764386195900979
+		</LteFix>
+		<MagiskSU
+		id="magisk_su"
+            	title="Magisk SU"
+            	description="For adding root access to Resurrection Remix">http://tiny.cc/latestmagisk
+		</MagiskSU>
 	</a53g>
 	</Beta>
 </SlimOTA>
