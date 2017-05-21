@@ -15,16 +15,14 @@
             	id="open_gapps"
             	title="OpenGapps"
             	description="Download latest OpenGApps">http://opengapps.org</OpenGappsUrl>
-	    <LteFix
-		id="lte_fix"
+	    <LtefixUrl
+		id="ltefix"
             	title="4G/LTE Fix"
-            	description="For adding LTE support on Resurrection Remix">https://www.androidfilehost.com/?fid=889764386195900979
-		</LteFix>
-		<MagiskSU
-		id="magisk_su"
+            	description="For adding LTE support on Resurrection Remix">https://www.androidfilehost.com/?fid=889764386195900979</LtefixUrl>
+	    <MagisksuUrl
+		id="magisksu"
             	title="Magisk SU"
-            	description="For adding root access to Resurrection Remix">http://tiny.cc/latestmagisk
-		</MagiskSU>
+            	description="For adding root access to Resurrection Remix">http://tiny.cc/latestmagisk</MagisksuUrl>
 	</a53g>
 	</Beta>
 </SlimOTA>
